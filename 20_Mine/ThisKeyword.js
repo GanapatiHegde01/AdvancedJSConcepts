@@ -24,39 +24,3 @@ dev = {
 }
 
 
-// Bind method is used to perma-bind the values into the function.
-// When we call bind method on some function it will be binded with that object and return a new method(reference) so that if we want to use it future we 
-// we can store it in an var and use it. Also we can pass the arguments with it. It will also set as default and baked into that function.
-
-// Example:
-// Binding the arugment of a particular function
-class Govt{
-    calTaxes(taxrate, price){
-        return price+ price*taxrate;
-    }
-
-
-}
-
-const UsGovtTax = new Govt();
-UsGovtTax.calTaxes.bind(null,0.18);
-const CATax = UsGovtTax.calTaxes.bind(null,0.18);
-CATax(10000);
-
-// Binding the method to a particular object.
-const Person = {
-
-    name: "Ganapati",
-    sing:function(){
-        console.log(`${this.name} Sings La La La`);
-    }
-}
-
-const Man = {
-    name:"Sarvesh"
-}
-
-
-const ManSings = Person.sing.bind(Man)
-
-
